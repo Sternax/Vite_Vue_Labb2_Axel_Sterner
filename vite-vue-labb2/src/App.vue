@@ -16,8 +16,4 @@
   </main>
 </template>
 
-<style scoped>
-* {
-  background: red;
-}
-</style>
+<style scoped></style>
