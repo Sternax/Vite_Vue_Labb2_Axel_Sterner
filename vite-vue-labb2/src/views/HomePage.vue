@@ -31,9 +31,11 @@ function onClick() {
 }
 </script>
 <template>
-  <h1>Welcome To FootyBase</h1>
-  <img src="/vite-vue-labb2/src/assets/logo.png" alt="FootyBase Logo" />
-  <p>
+  <h1 id="headerTitle">
+    Welcome To FootyBase <img id="logo" src="/logo.png" alt="FootyBase Logo" />
+  </h1>
+
+  <p id="searchBoxDescription">
     Find information about your favourite teams using our extensive database!
   </p>
   <div id="searchBox">
@@ -102,6 +104,23 @@ function onClick() {
   font-weight: 300;
   font-style: normal;
 }
+
+#headerTitle {
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+#logo {
+  width: 50px;
+  height: auto;
+}
+
+#searchBoxDescription {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
 #teamBadge {
   width: 100px;
   height: 100px;
