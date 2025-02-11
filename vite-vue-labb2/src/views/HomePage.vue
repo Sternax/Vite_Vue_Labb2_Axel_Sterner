@@ -26,12 +26,13 @@ function onClick() {
     })
     .catch((error) => {
       console.error("No data found:", error);
-      team.value = null; // Reset the team ref if no data is found
+      team.value = null; // reset team to null if no data is found
     });
 }
 </script>
 <template>
   <h1>Welcome To FootyBase</h1>
+  <img src="/vite-vue-labb2/src/assets/logo.png" alt="FootyBase Logo" />
   <p>
     Find information about your favourite teams using our extensive database!
   </p>
@@ -88,6 +89,19 @@ function onClick() {
   </div>
 </template>
 <style scoped>
+.urbanist-font-style {
+  font-family: "Urbanist", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  font-family: "Urbanist", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
 #teamBadge {
   width: 100px;
   height: 100px;
@@ -143,6 +157,10 @@ function onClick() {
   background-color: #343d46;
   color: white;
   border-radius: 10px;
+}
+
+#teamDescriptionContainer h3 {
+  font-size: 40px;
 }
 
 #teamInfoContainer {
