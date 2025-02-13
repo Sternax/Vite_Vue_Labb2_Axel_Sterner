@@ -21,6 +21,7 @@
 </template>
 
 <script setup>
+// Import components
 import { ref, onMounted } from "vue";
 import SearchBox from "../components/SearchBox.vue";
 import TeamInfo from "../components/TeamInfo.vue";
@@ -30,6 +31,7 @@ import TeamDescription from "../components/TeamDescription.vue";
 const teamSearch = ref("");
 const team = ref(null);
 
+//Function that fetches the team data from the API
 function onClick() {
   fetch(
     `https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${teamSearch.value}`
@@ -37,18 +39,18 @@ function onClick() {
     .then((res) => res.json())
     .then((data) => {
       team.value = data.teams ? data.teams[0] : null;
-      localStorage.setItem("savedTeam", JSON.stringify(team.value));
+      localStorage.setItem("savedTeam", JSON.stringify(team.value)); //Save team to local storage
     })
     .catch(() => {
       team.value = null;
-      localStorage.removeItem("savedTeam");
+      localStorage.removeItem("savedTeam"); //Remove saved team if not found
     });
 }
 
 onMounted(() => {
   const savedTeam = localStorage.getItem("savedTeam");
   if (savedTeam) {
-    team.value = JSON.parse(savedTeam);
+    team.value = JSON.parse(savedTeam); //Load saved team from local storage
   }
 });
 </script>
