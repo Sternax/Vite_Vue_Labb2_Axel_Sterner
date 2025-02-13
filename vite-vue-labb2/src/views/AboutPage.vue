@@ -11,7 +11,7 @@ const footballInfo = ref(
     <h1>{{ footballTitle }}</h1>
     <p>{{ footballInfo }}</p>
 
-    <a href="https://en.wikipedia.org/wiki/Football"
+    <a href="https://en.wikipedia.org/wiki/Football" target="_blank"
       >Read More About Football At Wikipedia.org</a
     >
   </div>
