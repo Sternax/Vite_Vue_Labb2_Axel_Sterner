@@ -4,20 +4,21 @@
       id="searchField"
       type="text"
       placeholder="Search Team"
-      v-model="searchQuery"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
     />
     <input id="searchButton" type="button" value="Search" @click="onSearch" />
   </div>
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from "vue";
+import { defineProps, defineEmits } from "vue";
 
-const emit = defineEmits(["search"]);
-const props = defineProps({ modelValue: String });
+defineProps({ modelValue: String });
+const emit = defineEmits(["update:modelValue", "search"]);
 
 const onSearch = () => {
-  emit("search", props.modelValue);
+  emit("search");
 };
 </script>
 

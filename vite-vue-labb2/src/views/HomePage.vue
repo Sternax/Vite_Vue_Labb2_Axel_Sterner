@@ -22,7 +22,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import SearchBox from "../components/searchBox.vue";
+import SearchBox from "../components/SearchBox.vue";
 import TeamInfo from "../components/TeamInfo.vue";
 import SocialMediaLinks from "../components/SocialMediaLinks.vue";
 import TeamDescription from "../components/TeamDescription.vue";
