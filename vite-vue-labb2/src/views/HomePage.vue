@@ -13,6 +13,7 @@
     <TeamInfo :team="team" />
     <SocialMediaLinks :team="team" />
     <TeamDescription :team="team" />
+    <LikedTeams :team="team" />
   </div>
 
   <div v-else>
@@ -27,18 +28,21 @@ import SearchBox from "../components/SearchBox.vue";
 import TeamInfo from "../components/TeamInfo.vue";
 import SocialMediaLinks from "../components/SocialMediaLinks.vue";
 import TeamDescription from "../components/TeamDescription.vue";
+import LikedTeams from "../components/LikedTeams.vue";
+import axios from "axios";
 
 const teamSearch = ref("");
 const team = ref(null);
 
 //Function that fetches the team data from the API
 function onClick() {
-  fetch(
-    `https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${teamSearch.value}`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      team.value = data.teams ? data.teams[0] : null;
+  axios
+    .get(
+      `https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${teamSearch.value}`
+    )
+    .then((res) => {
+      console.log(res.data.teams);
+      team.value = res.data.teams ? res.data.teams[0] : null;
       localStorage.setItem("savedTeam", JSON.stringify(team.value)); //Save team to local storage
     })
     .catch(() => {

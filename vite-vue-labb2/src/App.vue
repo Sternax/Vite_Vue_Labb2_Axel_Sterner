@@ -5,7 +5,7 @@
     <ul>
       <li><RouterLink to="/HomePage">HOME</RouterLink></li>
       <li><RouterLink to="/AboutPage">ABOUT</RouterLink></li>
-      <li><RouterLink to="*">*</RouterLink></li>
+      <li><RouterLink to="/FavouritesPage">FAVOURITES</RouterLink></li>
     </ul>
   </nav>
 
@@ -16,7 +16,7 @@
   </main>
 </template>
 
-<style>
+<style scoped>
 .urbanist-font-style {
   font-family: "Urbanist", serif;
   font-optical-sizing: auto;
