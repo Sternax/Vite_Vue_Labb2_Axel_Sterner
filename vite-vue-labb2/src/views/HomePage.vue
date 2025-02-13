@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const teamSearch = ref("");
 const team = ref(null);
@@ -23,12 +23,21 @@ function onClick() {
     .then((data) => {
       console.log("API Response:", data);
       team.value = data.teams[0];
+      localStorage.setItem("savedTeam", JSON.stringify(team.value)); // Use local storage to save the team
     })
     .catch((error) => {
       console.error("No data found:", error);
-      team.value = null; // reset team to null if no data is found
+      team.value = null; // Reset team to null if no data is found
+      localStorage.removeItem("savedTeam"); // Remove the saved team from local storage
     });
 }
+
+onMounted(() => {
+  const savedTeam = localStorage.getItem("savedTeam");
+  if (savedTeam) {
+    team.value = JSON.parse(savedTeam);
+  }
+}); // Load the saved team from local storage when the component is mounted
 </script>
 <template>
   <h1 id="headerTitle">
@@ -125,6 +134,11 @@ function onClick() {
   width: 100px;
   height: 100px;
   margin: 10px;
+}
+
+#teamTitle {
+  font-weight: 600;
+  font-size: 40px;
 }
 
 .socialMedias {

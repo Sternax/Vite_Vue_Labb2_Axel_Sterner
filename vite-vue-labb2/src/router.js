@@ -7,6 +7,10 @@ export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
+      path: "/",
+      redirect: "/HomePage",
+    },
+    {
       component: HomePage,
       path: "/HomePage",
     },
