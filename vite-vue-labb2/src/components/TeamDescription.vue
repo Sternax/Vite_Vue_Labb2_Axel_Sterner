@@ -21,7 +21,7 @@ defineProps({ team: Object });
   padding: 30px;
   background-color: #343d46;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #teamDescriptionContainer h3 {
   font-size: 40px;
