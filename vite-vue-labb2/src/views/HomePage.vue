@@ -3,17 +3,14 @@
     Welcome To FootyBase <img id="logo" src="/logo.png" alt="FootyBase Logo" />
   </h1>
 
-  <p id="searchBoxDescription">
-    Find information about your favourite teams using our extensive database!
-  </p>
+  <p id="searchBoxDescription">Find your favourite football team!</p>
 
   <SearchBox v-model="teamSearch" @search="onClick" />
 
   <div id="teamContainer" v-if="team">
     <TeamInfo :team="team" />
-    <SocialMediaLinks :team="team" />
     <TeamDescription :team="team" />
-    <LikedTeams :team="team" />
+    <SocialMediaLinks :team="team" />
   </div>
 
   <div v-else>
@@ -28,7 +25,6 @@ import SearchBox from "../components/SearchBox.vue";
 import TeamInfo from "../components/TeamInfo.vue";
 import SocialMediaLinks from "../components/SocialMediaLinks.vue";
 import TeamDescription from "../components/TeamDescription.vue";
-import LikedTeams from "../components/LikedTeams.vue";
 import axios from "axios";
 
 const teamSearch = ref("");
@@ -64,6 +60,7 @@ onMounted(() => {
   margin-bottom: 30px;
   font-size: 50px;
   font-weight: 600;
+  color: white;
 }
 #logo {
   width: 50px;
@@ -72,11 +69,32 @@ onMounted(() => {
 #searchBoxDescription {
   font-size: 20px;
   margin-bottom: 10px;
+  color: white;
+  width: 600px;
+  text-align: center;
 }
 #teamContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+  #headerTitle {
+    font-size: 30px;
+  }
+  #searchBoxDescription {
+    font-size: 16px;
+    width: 350px;
+  }
+
+  #teamContainer {
+    width: 350px;
+  }
+
+  #teamInfoContainer {
+    width: 350px;
+  }
 }
 </style>

@@ -52,4 +52,18 @@ a {
 a:hover {
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 600px) {
+  #footballAboutPage {
+    width: 350px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
 </style>

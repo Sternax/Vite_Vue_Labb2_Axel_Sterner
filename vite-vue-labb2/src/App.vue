@@ -3,9 +3,9 @@
 <template>
   <nav>
     <ul>
-      <li><RouterLink to="/HomePage">HOME</RouterLink></li>
-      <li><RouterLink to="/AboutPage">ABOUT</RouterLink></li>
-      <li><RouterLink to="/FavouritesPage">FAVOURITES</RouterLink></li>
+      <li><RouterLink to="/HomePage">Home</RouterLink></li>
+      <li><RouterLink to="/AboutPage">About</RouterLink></li>
+      <li><RouterLink to="/FavouritesPage">Favourites</RouterLink></li>
     </ul>
   </nav>
 
@@ -17,18 +17,7 @@
 </template>
 
 <style scoped>
-.urbanist-font-style {
-  font-family: "Urbanist", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
 * {
-  font-family: "Urbanist", serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -38,8 +27,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #343d46;
-  height: 50px;
+  background-color: #23292f;
+  height: 60px;
   margin-bottom: 30px;
 }
 
@@ -48,15 +37,36 @@ ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   list-style-type: none;
   width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 li a {
   text-decoration: none;
   color: white;
-  margin-right: 30px;
+  margin: 0 20px;
   font-size: 30px;
+  border-radius: 5px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+li a:hover {
+  cursor: pointer;
+  background-color: #343d46;
 }
 
 main {
@@ -64,5 +74,25 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  li a {
+    font-size: 20px;
+    margin: 0;
+  }
 }
 </style>

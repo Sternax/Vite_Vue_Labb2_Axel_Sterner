@@ -25,5 +25,17 @@ defineProps({ team: Object });
 }
 #teamDescriptionContainer h3 {
   font-size: 40px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  #teamDescriptionContainer {
+    width: 350px;
+    margin-top: 10px;
+  }
+
+  #teamDescription {
+    font-size: 16px;
+  }
 }
 </style>

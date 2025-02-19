@@ -44,4 +44,21 @@ const onSearch = () => {
   color: white;
   background-color: #343d46;
 }
+
+#searchButton:hover {
+  cursor: pointer;
+  background-color: #c0c5ce;
+  border: 1px solid #343d46;
+  color: #343d46;
+}
+
+@media screen and (max-width: 600px) {
+  #searchField {
+    width: 280px;
+    margin: 0;
+  }
+  #searchButton {
+    width: 70px;
+  }
+}
 </style>

@@ -37,4 +37,20 @@ onMounted(() => {
     <input type="button" value="Save Team as Favourite" @click="saveTeam" />
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #c0c5ce;
+  color: white;
+  background-color: #343d46;
+}
+
+input:hover {
+  cursor: pointer;
+  background-color: #c0c5ce;
+  border: 1px solid #343d46;
+  color: #343d46;
+}
+</style>

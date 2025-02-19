@@ -21,7 +21,7 @@ onMounted(() => {
 <template>
   <div>
     <h1>Favourited Teams</h1>
-    <ul>
+    <ul v-if="savedTeams.length > 0">
       <li v-for="team in savedTeams" :key="team.idTeam" class="team-item">
         <div class="team-info">
           <h2>{{ team.strTeam }}</h2>
@@ -43,6 +43,7 @@ onMounted(() => {
         />
       </li>
     </ul>
+    <p id="noTeamInFavourites" v-else>No Teams Added to Favourites</p>
   </div>
 </template>
 <style scoped>
@@ -55,6 +56,7 @@ onMounted(() => {
 h1 {
   font-size: 50px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #removeTeamButton {
@@ -88,5 +90,31 @@ ul {
   width: 100px;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+#noTeamInFavourites {
+  font-size: 30px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .team-item {
+    width: 350px;
+  }
+
+  .teamBadge {
+    height: 50px;
+    width: 50px;
+  }
+
+  #noTeamInFavourites {
+    font-size: 20px;
+    text-align: center;
+  }
 }
 </style>

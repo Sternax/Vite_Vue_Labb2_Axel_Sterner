@@ -8,22 +8,25 @@
     <p class="teamInfo">League: {{ team.strLeague }}</p>
     <p class="teamInfo">Stadium: {{ team.strStadium }}</p>
     <p class="teamInfo">Stadium Capacity: {{ team.intStadiumCapacity }}</p>
+    <LikedTeams :team="team" />
   </div>
 </template>
 
 <script setup>
 defineProps({ team: Object });
+import LikedTeams from "../components/LikedTeams.vue";
 </script>
 
 <style scoped>
 #teamBadge {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 10px;
 }
 #teamTitle {
   font-weight: 600;
   font-size: 40px;
+  margin-bottom: 20px;
 }
 #teamInfoContainer {
   margin: 10px;
@@ -32,6 +35,10 @@ defineProps({ team: Object });
   color: white;
   width: 600px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.teamInfo {
+  font-size: 18px;
 }
 </style>

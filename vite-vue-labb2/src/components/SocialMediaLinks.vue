@@ -36,15 +36,27 @@ function formatUrl(url) {
 .socialMedias {
   width: 30px;
   height: 30px;
-  margin: 5px;
 }
 #socialMediasContainer {
-  background-color: #c0c5ce;
   width: 600px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #c0c5ce;
+  margin: 10px;
+}
+
+#socialMediasContainer a {
+  height: 30px;
+  width: 30px;
+  margin: 0 30px;
+}
+
+@media screen and (max-width: 600px) {
+  #socialMediasContainer {
+    width: 350px;
+  }
 }
 </style>
