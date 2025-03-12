@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  background-color: #23292f;
+}
+
 nav {
   display: flex;
   justify-content: center;

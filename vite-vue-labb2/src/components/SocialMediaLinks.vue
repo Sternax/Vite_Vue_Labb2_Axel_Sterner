@@ -46,6 +46,7 @@ function formatUrl(url) {
   border-radius: 5px;
   background-color: #c0c5ce;
   margin: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 #socialMediasContainer a {

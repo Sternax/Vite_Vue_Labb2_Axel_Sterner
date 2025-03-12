@@ -83,6 +83,7 @@ ul {
   background-color: #343d46;
   color: white;
   border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .teamBadge {

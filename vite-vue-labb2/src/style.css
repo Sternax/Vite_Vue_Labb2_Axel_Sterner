@@ -22,3 +22,8 @@
 body {
   background-color: #111417;
 }
+
+#app {
+  height: 100vh;
+  background-color: #242424;
+}

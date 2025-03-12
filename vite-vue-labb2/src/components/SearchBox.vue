@@ -35,6 +35,7 @@ const onSearch = () => {
   color: white;
   background-color: #343d46;
   padding: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 #searchButton {
   height: 30px;
@@ -43,6 +44,7 @@ const onSearch = () => {
   border: 1px solid #c0c5ce;
   color: white;
   background-color: #343d46;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 #searchButton:hover {
